@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>order</title>
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+
+
+</head>
+
+
+<body >
+<div class="container">
+    <h2>Orderinfo</h2>
+    <table class="table table-bordered" ng-app="myApp" ng-controller="OrdersController" >
+        <tr>
+            <th>OrderId</th>
+            <th>Status</th>
+        </tr>
+        <tr ng-repeat="list in order">
+            <td>{{list.orderid}}</td>
+            <td>{{list.status}}</td>
+
+        </tr>
+    </table>
+</div>
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("OrdersController", function($scope,$http) {
+        var url = "http://192.168.199.10:3000/api/v1/mes/getallorder";
+        var res = $http.get(url);
+        res.success(function (data, status, header, config) {
+        $scope.order = data;
+        });
+
+        res.error(function (data, status, header, config) {
+
+       });
+    });
+
+
+    </script>
+</body>
+</html>

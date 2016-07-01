@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Material</title>
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+
+    <script src="materialController.js"></script>
+
+</head>
+<body >
+<div class="container">
+    <h2>Materialinfo</h2>
+    <table class="table table-bordered" ng-app="myApp" ng-controller="MaterialController">
+        <tr>
+            <th>Mid</th>
+            <th>Number</th>
+        </tr>
+        <tr ng-repeat="list in material">
+            <td>{{list.mid}}</td>
+            <td>{{list.count}}</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
