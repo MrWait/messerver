@@ -10,9 +10,11 @@
 </head>
 
 
-<body >
+<body background="background.png">
+<br/>
+<div><img src="swieLogo.png"></div>
 <div class="container">
-    <h2>Orderinfo</h2>
+  <font color="#00bfff">  <h2>Orderinfo</h2></font>
     <table class="table table-bordered" ng-app="myApp" ng-controller="OrdersController" >
         <tr>
             <th>OrderId</th>
@@ -21,14 +23,13 @@
         <tr ng-repeat="list in order">
             <td>{{list.orderid}}</td>
             <td>{{list.status}}</td>
-
         </tr>
     </table>
 </div>
 <script>
     var app = angular.module("myApp", []);
     app.controller("OrdersController", function($scope,$http) {
-        var url = "http://192.168.199.10:3000/api/v1/mes/getallorder";
+        var url = "";
         var res = $http.get(url);
         res.success(function (data, status, header, config) {
         $scope.order = data;
@@ -38,7 +39,22 @@
 
        });
     });
-
+//   app.controller('OrdersController', function ($scope, $http) {
+//        // var url = "";
+//  var res = $http.get(url);
+// res.success(function (data, status, header, config) {
+//  $rootScope.source = data;
+////  });
+//        order=[
+//            {"orderid":"0001","status":"ok"},
+//        ]
+//        $scope.order=[
+//            {"orderid":"0001","status":"ok"},
+//        ];
+//        res.error(function (data, status, header, config) {
+//
+//        });
+//    });
 
     </script>
 </body>

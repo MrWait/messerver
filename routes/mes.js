@@ -9,13 +9,29 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/inputmeterial', handler.inputmeterial);
-router.get('/inputmeterial', handler.initmeterial);
-router.get('/getallorder', handler.getallorder);
-router.get('/getallmeterial', handler.getallmeterial);
-router.get('/initorder', handler.initorder);
-router.post('/inputmeterialid', handler.inputmeterialid);
-router.get('/getallmeterial_online', handler.getallmeterial_online);
 router.get('/initmeterial', handler.initmeterial);
+router.get('/getallmeterial', handler.getallmeterial);
 
+router.get('/getallmeterial_produce', handler.getallmeterial_produce);
+router.get('/initmeterial_produce', handler.initmeterial_produce);
+
+router.post('/inputmeterialid', handler.inputmeterialid);
+
+router.get('/initorder', handler.initorder);
+router.get('/getallorder', handler.getallorder);
+
+router.post('/meterial/input', handler.inputmeterial);
+router.get('/meterial/init', handler.initmeterial);
+router.get('/meterial/getall', handler.getallmeterial);
+
+router.get('/meterial_produce/getall', handler.getallmeterial_produce);
+router.get('/meterial_produce/init', handler.initmeterial_produce);
+router.post('/meterial_produce/input', handler.inputmeterial_produce);
+
+router.post('/inputmeterialid', handler.inputmeterialid);
+
+router.get('/order/init', handler.initorder);
+router.get('/order/getall', handler.getallorder);
+router.get('/order/update', handler.updateorder);
 
 module.exports = router;
