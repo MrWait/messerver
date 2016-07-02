@@ -14,5 +14,8 @@ router.get('/getallorder', handler.getallorder);
 router.get('/getallmeterial', handler.getallmeterial);
 router.get('/initorder', handler.initorder);
 router.post('/inputmeterialid', handler.inputmeterialid);
+router.get('/getallmeterial_online', handler.getallmeterial_online);
+router.get('/initmeterial', handler.initmeterial);
+
 
 module.exports = router;
